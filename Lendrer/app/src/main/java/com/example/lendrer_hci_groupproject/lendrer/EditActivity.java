@@ -69,8 +69,6 @@ public class EditActivity extends AppCompatActivity {
                 Item item = new Item(saved[0], saved[1], saved[2], saved[3]);
                 dbHandler.addItem(item);
 
-                //Method to save changes here
-
                 finish();
             }
         });
@@ -85,13 +83,12 @@ public class EditActivity extends AppCompatActivity {
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                //delete from file with values from inputs array
+                                EditActivity.this.dbHandler.deleteItem(deleteName);
                                 finish();
                             }
                         })
                         .setNegativeButton("No", null)
                         .show();
-               dbHandler.deleteItem(deleteName);
 
             }
         }));
