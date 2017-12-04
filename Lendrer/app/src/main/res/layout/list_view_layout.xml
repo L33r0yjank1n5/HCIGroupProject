@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="26dp"
+        android:contentDescription="Name of your choice"
+        android:text="Name"
+        android:textStyle="bold"
+        tools:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/personNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nameTextView"
+        android:layout_alignStart="@+id/nameTextView"
+        android:layout_below="@+id/nameTextView"
+        android:contentDescription="Person you are lending to"
+        android:text="Person's Name" />
+
+    <TextView
+        android:id="@+id/startDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/personNameTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:contentDescription="Today, yesterday, what day did it start?"
+        android:text="Start Date" />
+
+    <TextView
+        android:id="@+id/dueDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/personNameTextView"
+        android:layout_alignBottom="@+id/personNameTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:contentDescription="What day do you expect it back?"
+        android:text="Due Date" />
+
+    <TextView
+        android:id="@+id/dashPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dueDateTextView"
+        android:layout_alignStart="@+id/dueDateTextView"
+        android:layout_alignTop="@+id/startDateTextView"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/startedPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/startDateTextView"
+        android:layout_alignBottom="@+id/startDateTextView"
+        android:layout_toLeftOf="@+id/startDateTextView"
+        android:layout_toStartOf="@+id/startDateTextView"
+        android:text="Started:" />
+
+    <TextView
+        android:id="@+id/duePlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dueDateTextView"
+        android:layout_alignBottom="@+id/dueDateTextView"
+        android:layout_toLeftOf="@+id/dueDateTextView"
+        android:layout_toStartOf="@+id/dueDateTextView"
+        android:text="Due: " />
+
+</RelativeLayout>

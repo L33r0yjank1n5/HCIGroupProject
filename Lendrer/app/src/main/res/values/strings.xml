@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Lendrer</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="testNames">
+        <item>History Book</item>
+        <item>Charger</item>
+    </string-array>
+
+    <string-array name="testStartDates">
+        <item>10/1/17</item>
+        <item>11/1/17</item>
+    </string-array>
+
+    <string-array name="testDueDates">
+        <item>10/1/17</item>
+        <item>11/1/17</item>
+    </string-array>
+
+    <string-array name="testPersonNames">
+        <item>Adam Smestad</item>
+        <item>Jay Lohse</item>
+    </string-array>
+
+</resources>
