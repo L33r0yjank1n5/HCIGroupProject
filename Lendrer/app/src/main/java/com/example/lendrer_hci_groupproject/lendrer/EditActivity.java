@@ -57,7 +57,9 @@ public class EditActivity extends AppCompatActivity {
                 saved[3] = editPersonNameEditText.getText().toString();
 
                 String test = saved.toString();
+
                 //Method to save changes here
+
                 finish();
             }
         });

@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         Resources res = getResources();
         itemList = findViewById(R.id.itemList);
+        //Get values from database
         names = res.getStringArray(R.array.testNames);
         startDates = res.getStringArray(R.array.testStartDates);
         dueDates = res.getStringArray(R.array.testDueDates);

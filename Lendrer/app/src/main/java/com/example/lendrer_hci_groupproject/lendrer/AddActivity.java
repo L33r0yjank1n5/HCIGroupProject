@@ -31,6 +31,7 @@ public class AddActivity extends AppCompatActivity {
                 String personName = addPersonNameEditText.getText().toString();
 
                 //Add method still needed
+                finish();
             }
         });
     }
