@@ -74,7 +74,7 @@ public class EditActivity extends AppCompatActivity {
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                //delete from file
+                                //delete from file with values from inputs array
                                 finish();
                             }
                         })
