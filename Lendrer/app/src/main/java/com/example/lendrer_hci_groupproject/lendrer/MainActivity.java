@@ -22,21 +22,30 @@ public class MainActivity extends AppCompatActivity {
     String[] startDates;
     String[] dueDates;
     String[] personNames;
+    MyDBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+    }
+
+    protected void onResume() {
+        super.onResume();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        dbHandler = new MyDBHandler(this, null, null, 1);
 
         Resources res = getResources();
         itemList = findViewById(R.id.itemList);
         //Get values from database
-        names = res.getStringArray(R.array.testNames);
-        startDates = res.getStringArray(R.array.testStartDates);
-        dueDates = res.getStringArray(R.array.testDueDates);
-        personNames = res.getStringArray(R.array.testPersonNames);
+        names = dbHandler.databaseToArray();
+        startDates = dbHandler.databaseDateArray();
+        dueDates = dbHandler.databaseDueDateArray();
+        personNames = dbHandler.databaseLentToArray();
 
         ItemAdapter itemAdapter = new ItemAdapter(this, names, startDates, dueDates, personNames);
         itemList.setAdapter(itemAdapter);
@@ -59,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(showAddActivity);
             }
         });
+
     }
 
     @Override

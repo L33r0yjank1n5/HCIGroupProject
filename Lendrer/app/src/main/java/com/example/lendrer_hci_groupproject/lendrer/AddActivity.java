@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 public class AddActivity extends AppCompatActivity {
 
+    MyDBHandler dbHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,8 @@ public class AddActivity extends AppCompatActivity {
         new DateInputMask(addStartDayEditText);
         new DateInputMask(addDueDateEditText);
 
+        dbHandler = new MyDBHandler(this, null, null, 1);
+
         Button addSaveButton = (Button)findViewById(R.id.addSaveButton);
         addSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,8 +35,12 @@ public class AddActivity extends AppCompatActivity {
                 String personName = addPersonNameEditText.getText().toString();
 
                 //Add method still needed
+                Item item = new Item(name, startDate, dueDate, personName);
+                dbHandler.addItem(item);
                 finish();
             }
         });
     }
+
+
 }
