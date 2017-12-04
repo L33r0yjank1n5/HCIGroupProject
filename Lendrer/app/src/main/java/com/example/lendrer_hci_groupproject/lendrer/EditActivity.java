@@ -11,6 +11,10 @@ import android.widget.EditText;
 
 public class EditActivity extends AppCompatActivity {
 
+    MyDBHandler dbHandler;
+    String deleteName;
+
+
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
@@ -31,6 +35,8 @@ public class EditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
+        dbHandler = new MyDBHandler(this, null, null, 1);
+
         Intent in = getIntent();
         String input = in.getStringExtra("itemSelected");
         String[] inputs = input.split("[,]");
@@ -46,6 +52,8 @@ public class EditActivity extends AppCompatActivity {
         editDueDateEditText.setText(inputs[2]);
         editPersonNameEditText.setText(inputs[3]);
 
+        deleteName = inputs[0];
+
         Button editSaveButton = (Button) findViewById(R.id.editSaveButton);
         editSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +65,9 @@ public class EditActivity extends AppCompatActivity {
                 saved[3] = editPersonNameEditText.getText().toString();
 
                 String test = saved.toString();
+                dbHandler.deleteItem(deleteName);
+                Item item = new Item(saved[0], saved[1], saved[2], saved[3]);
+                dbHandler.addItem(item);
 
                 //Method to save changes here
 
@@ -80,6 +91,8 @@ public class EditActivity extends AppCompatActivity {
                         })
                         .setNegativeButton("No", null)
                         .show();
+               dbHandler.deleteItem(deleteName);
+
             }
         }));
 
